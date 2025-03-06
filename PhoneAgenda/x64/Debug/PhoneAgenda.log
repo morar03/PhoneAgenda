@@ -1,2 +1,6 @@
-﻿  PhoneAgendaDlg.cpp
+﻿  Contact.cpp
+  DatabaseConnection.cpp
+  PhoneAgenda.cpp
+  PhoneAgendaDlg.cpp
+  Generating Code...
   PhoneAgenda.vcxproj -> C:\Users\morar\Desktop\Proiect MFC\PhoneAgenda\x64\Debug\PhoneAgenda.exe

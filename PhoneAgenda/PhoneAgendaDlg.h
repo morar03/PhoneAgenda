@@ -3,6 +3,9 @@
 //
 
 #pragma once
+#include <vector>
+#include "Contact.h"
+#include "DatabaseConnection.h"
 
 
 // CPhoneAgendaDlg dialog
@@ -30,11 +33,24 @@ protected:
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
-	DECLARE_MESSAGE_MAP()
-public:
+
 	afx_msg void OnBnClickedButtonAdd();
-	afx_msg void OnBnClickedButton1();
 	afx_msg void OnBnClickedButtonDelete();
-	afx_msg void OnLbnSelchangeListContacts();
 	afx_msg void OnBnClickedButtonEdit();
+	afx_msg void OnEnChangeTextSearch();
+	afx_msg void OnBnClickedButtonSave();
+
+	DECLARE_MESSAGE_MAP()
+
+private:
+	std::vector<Contact> listContacts;
+	CListBox listBoxContacts;
+	CEdit textSearch;
+	DatabaseConnection dbConn;
+	int selectedContactID;
+
+	std::vector<Contact> SearchContacts(const CString& searchText);
+	int FindContactID(const CString& selectedContact);
+	void UpdateContactList();
+	
 };
